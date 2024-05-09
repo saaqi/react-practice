@@ -3,20 +3,19 @@ import Header from './Header.jsx'
 import './App.css'
 
 function App() {
+  const first = 'Yes!';
+  const second = 'No!';
   const [count, setCount] = useState(0);
-  const [greeting, setGreeting] = useState('not yet been Clicked!');
+  const [greeting, setGreeting] = useState(first);
   function setStat() {
-
-    (greeting === 'not yet been Clicked!' ?
-      setGreeting('now been clicked!!') :
-      setGreeting('not yet been Clicked!'));
-    }
+    (greeting === first ? setGreeting(second) : setGreeting(first));
+  }
 
   return (
     <>
       <Header heading="Practice React." />
       <button onClick={setStat}>
-        The button has {greeting}
+        {greeting}
       </button>
       <div className="card">
         <button onClick={() => setCount(count + 1)}>
