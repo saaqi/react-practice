@@ -1,4 +1,5 @@
 import './App.css'
+import { Link } from 'react-router-dom'
 
 const NavLink = [
   {
@@ -29,7 +30,7 @@ const printLinks = (item) => {
     text = '',
     key = ''
   } = item;
-  return <li key={key} id={key}><a href={link}>{text}</a></li>;
+  return <li key={key} id={key}><Link to={link} className="nav-item">{text}</Link></li>;
 }
 
 function Nav() {
