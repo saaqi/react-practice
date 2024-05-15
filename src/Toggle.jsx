@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import Header from './Header.jsx'
 import './App.css'
 
-function App() {
+function Toggle() {
   const first = 'Yes!';
   const second = 'No!';
-  const [count, setCount] = useState(0);
   const [greeting, setGreeting] = useState(first);
   function setStat() {
     (greeting === first ? setGreeting(second) : setGreeting(first));
@@ -13,17 +11,13 @@ function App() {
 
   return (
     <>
-      <Header heading="Practice React." />
-      <button onClick={setStat}>
-        {greeting}
-      </button>
       <div className="card">
-        <button onClick={() => setCount(count + 1)}>
-          count is {count}
+        <button onClick={setStat}>
+          {greeting}
         </button>
       </div>
     </>
   )
 }
 
-export default App
+export default Toggle
