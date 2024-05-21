@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/theme-toggle-button" element={
                 <ThemeProvider>
                   <ThemeToggleButton
-                    text="Toggle Color"
+                    text="Toggle Theme"
                     // documentTitle=""
                     // documentDescription=""
                     // documentURL="/theme-toggle-button"
