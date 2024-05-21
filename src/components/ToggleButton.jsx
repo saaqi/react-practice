@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import './App.css'
 
-function Toggle() {
+function ToggleButton() {
   const first = 'Yes!';
   const second = 'No!';
   const [greeting, setGreeting] = useState(first);
@@ -10,12 +9,10 @@ function Toggle() {
   }
 
   return (
-    <div className="card">
-      <button onClick={setStat}>
-        {greeting}
-      </button>
-    </div>
+    <button className="btn btn-lg btn-outline-dark" onClick={setStat}>
+      {greeting}
+    </button>
   )
 }
 
-export default Toggle
+export default ToggleButton
