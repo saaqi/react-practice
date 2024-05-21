@@ -10,13 +10,11 @@ function Toggle() {
   }
 
   return (
-    <>
-      <div className="card">
-        <button onClick={setStat}>
-          {greeting}
-        </button>
-      </div>
-    </>
+    <div className="card">
+      <button onClick={setStat}>
+        {greeting}
+      </button>
+    </div>
   )
 }
 

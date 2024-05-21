@@ -15,9 +15,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Nav />
       <Header heading="Saaqi Practices React" />
       <Routes>
+        <Route path="/" element={<></>} />
         <Route path="/toggle-button" element={<Toggle />} />
         <Route path="/counter-button" element={<Counter />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
