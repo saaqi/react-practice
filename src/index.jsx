@@ -18,11 +18,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <main className="min-vh-100 align-items-center d-flex justify-content-center">
           <div className="container my-4 text-center">
-            <Header heading="Saaqi Practices React" />
             <Nav />
             <Routes>
               <Route path="/" element={
-              <>
+                <>
                 <Helmet>
                   <title>Practice Project for React Basic Course.</title>
                     <meta
@@ -31,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     />
                   <link rel="canonical" href="/" />
                 </Helmet>
+                <Header heading="Practice Project for React Basic Course." />
               </>
               } />
               <Route path="/counter-button" element={

@@ -8,11 +8,13 @@ function CounterButton(props) {
   return (
     <>
       <Helmet>
-        <title>{
-          props.documentTitle ?
+        <title>
+          {
+            props.documentTitle ?
             props.documentTitle :
             'Press Counter Button - ' + WebSiteTitle()
-        }</title>
+          }
+        </title>
         <meta
           name='description'
           content={
@@ -23,6 +25,15 @@ function CounterButton(props) {
         />
         <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation() } />
       </Helmet>
+
+        <h1 className="h2">
+        {
+          props.documentTitle ?
+          props.documentTitle :
+          'Press Counter Buttons'
+        }
+      </h1>
+
       <button className="btn btn-lg btn-outline-primary" onClick={() => setCount(count + 1)}>
         count is {count}
       </button>
