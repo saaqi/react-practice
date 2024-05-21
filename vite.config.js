@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: "./",
+  base: "/react-practice/",
   server: {
     port: 3000,
   },

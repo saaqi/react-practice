@@ -13,6 +13,10 @@ const NavLink = [
     link: '/theme-toggle-button',
     text: 'Theme Toggle Button'
   },
+  {
+    link: '/calculator',
+    text: 'Calculator'
+  },
 ].map((item, index) => {
   return {
     ...item,

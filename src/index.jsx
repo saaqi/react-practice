@@ -8,6 +8,7 @@ import Header from './components/Header.jsx'
 import CounterButton from './components/CounterButton.jsx'
 import { ThemeProvider } from './components/context/ThemeContext'
 import ThemeToggleButton from './components/ThemeToggleButton.jsx'
+import Calculator from './components/Calculator.jsx'
 import NotFound from './components/NotFound.jsx'
 
 import './styles/main.scss'
@@ -18,7 +19,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <main className="min-vh-100 align-items-center d-flex justify-content-center">
           <div className="container my-4 text-center">
+
+            {/* Navigatoin */}
             <Nav />
+
+            {/* Home */}
             <Routes>
               <Route path="/" element={
                 <>
@@ -33,6 +38,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Header heading="Practice Project for React Basic Course." />
               </>
               } />
+
+              {/* Counter Button */}
               <Route path="/counter-button" element={
                 <CounterButton
                   // documentTitle="nyet"
@@ -40,6 +47,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   // documentURL="/counter-button"
                 />
               } />
+
+              {/* Theme Toggle Button */}
               <Route path="/theme-toggle-button" element={
                 <ThemeProvider>
                   <ThemeToggleButton
@@ -50,6 +59,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   />
                 </ThemeProvider>
               } />
+
+              {/* Calculator */}
+              <Route path="/calculator" element={
+                  <Calculator
+                    // documentTitle=""
+                    // documentDescription=""
+                    // documentURL="/theme-toggle-button"
+                  />
+              } />
+
+              {/* 404 Page */}
               <Route path='*' element={<NotFound />}/>
             </Routes>
           </div>
