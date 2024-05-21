@@ -3,23 +3,20 @@ import { Link } from 'react-router-dom'
 const NavLink = [
   {
     link: '/',
-    text: 'Home',
-    key: '1'
+    text: 'Home'
   },
   {
     link: '/counter-button',
-    text: 'Counter Button',
-    key: '2'
+    text: 'Counter Button'
   },
   {
-    link: '/toggle-button',
-    text: 'Toggle Button',
-    key: '3'
+    link: '/theme-toggle-button',
+    text: 'Theme Toggle Button'
   },
 ].map((item, index) => {
   return {
     ...item,
-    key: `navlink-${index}`,
+    id: `navlink-${index}`
   };
 });
 
@@ -27,9 +24,15 @@ const printLinks = (item) => {
   const {
     link = '',
     text = '',
-    key = ''
+    id = ''
   } = item;
-  return <li key={key} id={key}><Link to={link} className="nav-item btn btn-info">{text}</Link></li>;
+  return (
+    <li key={id} id={id}>
+      <Link to={link} className="nav-item btn btn-info">
+        {text}
+      </Link>
+    </li>
+  )
 }
 
 function Nav() {
