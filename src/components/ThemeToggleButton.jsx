@@ -2,7 +2,7 @@
 import { useContext, useEffect } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import { Helmet } from 'react-helmet-async';
-import { WebSiteLocation, WebSiteTitle } from './DefaultData'
+import { WebSiteLocation, webSiteTitle } from './DefaultData'
 
 
 function ThemeToggleButton(props) {
@@ -31,7 +31,7 @@ function ThemeToggleButton(props) {
         <title>{
           props.documentTitle ?
             props.documentTitle :
-            'Toggle Color Theme Button - ' + WebSiteTitle()
+            'Toggle Color Theme Button - ' + webSiteTitle
         }</title>
         <meta
           name='description'

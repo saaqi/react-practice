@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
             {/* Home */}
             <Routes>
-              <Route path="/" element={
+              <Route path="/react-practice/" element={
                 <>
                 <Helmet>
                   <title>Practice Project for React Basic Course.</title>
@@ -33,14 +33,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                       name='description'
                       content='page for practicing react for Saqib Islam.'
                     />
-                  <link rel="canonical" href="/" />
+                  <link rel="canonical" href="/react-practice/" />
                 </Helmet>
                 <Header heading="Practice Project for React Basic Course." />
               </>
               } />
 
               {/* Counter Button */}
-              <Route path="/counter-button" element={
+              <Route path="/react-practice/counter-button" element={
                 <CounterButton
                   // documentTitle="nyet"
                   // documentDescription=""
@@ -49,7 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               } />
 
               {/* Theme Toggle Button */}
-              <Route path="/theme-toggle-button" element={
+              <Route path="/react-practice/theme-toggle-button" element={
                 <ThemeProvider>
                   <ThemeToggleButton
                     text="Toggle Theme"
@@ -61,7 +61,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               } />
 
               {/* Calculator */}
-              <Route path="/calculator" element={
+              <Route path="/react-practice/calculator" element={
                   <Calculator
                     // documentTitle=""
                     // documentDescription=""

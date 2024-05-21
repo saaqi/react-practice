@@ -1,12 +1,9 @@
 import { useLocation } from 'react-router-dom'
 
-function WebSiteTitle() {
-  return "Saaqi Practices React"
-}
+const webSiteTitle = "Saaqi Practices React"
 
 function WebSiteLocation() {
   return useLocation().pathname;
 }
 
-
-export {WebSiteTitle, WebSiteLocation}
+export {webSiteTitle, WebSiteLocation}

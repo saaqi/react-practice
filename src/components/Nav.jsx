@@ -2,19 +2,19 @@ import { Link } from 'react-router-dom'
 
 const NavLink = [
   {
-    link: '/',
+    link: '/react-practice/',
     text: 'Home'
   },
   {
-    link: '/counter-button',
+    link: '/react-practice/counter-button',
     text: 'Counter Button'
   },
   {
-    link: '/theme-toggle-button',
+    link: '/react-practice/theme-toggle-button',
     text: 'Theme Toggle Button'
   },
   {
-    link: '/calculator',
+    link: '/react-practice/calculator',
     text: 'Calculator'
   },
 ].map((item, index) => {

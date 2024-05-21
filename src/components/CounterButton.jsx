@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async';
-import { WebSiteLocation, WebSiteTitle } from './DefaultData'
+import { WebSiteLocation, webSiteTitle } from './DefaultData'
 
 function CounterButton(props) {
   const [count, setCount] = useState(0);
@@ -12,7 +12,7 @@ function CounterButton(props) {
           {
             props.documentTitle ?
             props.documentTitle :
-            'Press Counter Button - ' + WebSiteTitle()
+            'Press Counter Button - ' + webSiteTitle
           }
         </title>
         <meta
