@@ -1,17 +1,19 @@
 .input__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: .5rem;
 }
 
 .digit__buttons {
   grid-column: span 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
 }
 
 .calculate__buttons {
   grid-column: span 1;
   display: grid;
   grid-template-columns: 1fr;
+  gap: .5rem;
 }

@@ -13,34 +13,34 @@ function Calculator(props) {
 
   function plus(e) {
     e.preventDefault();
-    setResult((result) => result + Number(inputRef.current.value));
+    setResult((result) => result + Number(inputRef.current.value))
   };
 
   function minus(e) {
     e.preventDefault();
-    setResult((result) => result - Number(inputRef.current.value));
+    setResult((result) => result - Number(inputRef.current.value))
   };
 
   function times(e) {
     e.preventDefault();
-    setResult((result) => result ? result * Number(inputRef.current.value) : Number(inputRef.current.value));
+    setResult((result) => result ? result * Number(inputRef.current.value) : Number(inputRef.current.value))
   };
 
   function divide(e) {
     e.preventDefault();
-    setResult((result) => result ? result / Number(inputRef.current.value) : Number(inputRef.current.value));
+    setResult((result) => result ? result / Number(inputRef.current.value) : Number(inputRef.current.value))
   };
 
   function resetInput(e) {
     e.preventDefault();
     inputRef.current.value = null;
-    inputRef.current.focus();
+    // inputRef.current.focus();
   };
 
   function resetResult(e) {
     e.preventDefault();
     setResult(0);
-    inputRef.current.focus();
+    // inputRef.current.focus();
   };
 
   function resetAll(e) {
@@ -64,7 +64,6 @@ function Calculator(props) {
         <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation() } />
       </Helmet>
 
-
       <div className="App text-center d-flex flex-column align-items-center">
         <h1 className="fs-2">Calculator:</h1>
         <form className="d-flex flex-column gap-2">
@@ -75,19 +74,19 @@ function Calculator(props) {
             {result}
           </p>
           <input
-            className="input-field fs-5 fw-medium form-control border-primary-subtle rounded-0"
+            className="input-field fs-5 fw-medium form-control border-primary-subtle mb-2"
             pattern="[0-9]"
             ref={inputRef}
             type="number"
             placeholder="Type a number"
           />
 
-          <div class="input__container">
+          <div className="input__container">
             <div className="digit__buttons">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(number => (
                 <button
                   key={number}
-                  className="btn btn-outline-primary fs-4 px-4 rounded-0 border-primary-subtle"
+                  className="btn btn-outline-primary fs-4 px-4 border-primary-subtle"
                   onClick={(e) => {
                     e.preventDefault()
                     // alert(number)
@@ -97,14 +96,14 @@ function Calculator(props) {
                   {number}
                 </button>
               ))}
-              <button className="btn btn-danger rounded-0 border-primary-subtle" onClick={resetInput}>CE</button>
-              <button className="btn btn-danger rounded-0 border-primary-subtle" onClick={resetAll}>AC</button>
+              <button className="btn btn-danger" onClick={resetInput}>CE</button>
+              <button className="btn btn-danger" onClick={resetAll}>AC</button>
             </div>
             <div className="calculate__buttons">
-              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={divide}>/</button>
-              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={times}>X</button>
-              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={minus}>-</button>
-              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={plus}>+</button>
+              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={divide}>/</button>
+              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={times}>X</button>
+              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={minus}>-</button>
+              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={plus}>+</button>
             </div>
           </div>
 

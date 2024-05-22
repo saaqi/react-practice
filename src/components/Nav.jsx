@@ -22,8 +22,8 @@ const NavLink = [
   return {
     ...item,
     id: `navlink-${index}`
-  };
-});
+  }
+})
 
 const printLinks = (item) => {
   const {
@@ -48,7 +48,7 @@ function Nav() {
           <Link className="navbar-brand text-bg-warning" to="/react-practice/">
             <img src={logo}  alt="logo" height='60' />
           </Link>
-          <ul className="navbar-nav gap-2 align-items-center flex-sm-row flex-column">
+          <ul className="navbar-nav gap-2 align-items-center justify-content-center flex-wrap flex-row mb-4 mb-md-0">
             {NavLink.map(printLinks)}
           </ul>
         </div>
