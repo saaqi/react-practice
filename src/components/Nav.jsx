@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logo from '../images/logo.png'
 
 const NavLink = [
   {
@@ -11,7 +12,7 @@ const NavLink = [
   },
   {
     link: '/react-practice/theme-toggle-button',
-    text: 'Theme Toggle Button'
+    text: 'Theme Toggle'
   },
   {
     link: '/react-practice/calculator',
@@ -32,7 +33,7 @@ const printLinks = (item) => {
   } = item;
   return (
     <li key={id} id={id}>
-      <Link to={link} className="nav-item btn btn-info">
+      <Link to={link} className="nav-item fw-medium btn btn-primary">
         {text}
       </Link>
     </li>
@@ -41,11 +42,16 @@ const printLinks = (item) => {
 
 function Nav() {
   return (
-    <div className="contianer my-5">
-      <nav className="navigation d-flex justify-content-center">
-        <ul className='nav list-unstyled d-flex gap-3 w-auto justify-content-center align-items-center mb-3 py-3 px-4 bg-primary rounded shadow'>
-          {NavLink.map(printLinks)}
-        </ul>
+    <div className="contianer">
+      <nav className="navbar navbar-expand-lg bg-warning shadow-sm py-0">
+        <div className="container d-flex flex-column flex-md-row">
+          <Link className="navbar-brand text-bg-warning" to="/react-practice/">
+            <img src={logo}  alt="logo" height='60' />
+          </Link>
+          <ul className="navbar-nav gap-2 align-items-center flex-sm-row flex-column">
+            {NavLink.map(printLinks)}
+          </ul>
+        </div>
       </nav>
     </div>
   )

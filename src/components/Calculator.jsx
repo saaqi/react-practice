@@ -71,7 +71,7 @@ function Calculator(props) {
         <h1 className="fs-2">Saaqi's React Calculator App.</h1>
         <form style={styles} className="d-flex flex-column gap-2">
           <p
-            className='result py-1  mt-4 rounded shadow-sm bg-warning text-bg-warning fw-medium fs-2'
+            className='result py-1  mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2'
             ref={resultRef}
           >
             {result}
