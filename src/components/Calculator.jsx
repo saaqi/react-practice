@@ -26,7 +26,7 @@ function Calculator(props) {
 
   function divide(e) {
     e.preventDefault();
-    setResult((result) => result / Number(inputRef.current.value));
+    setResult((result) => result ? result / Number(inputRef.current.value): 0);
   };
 
   function resetInput(e) {
@@ -47,14 +47,14 @@ function Calculator(props) {
     resetResult(e);
   };
 
+
+  const styles = {
+    maxWidth: '500px'
+  }
   return (
     <>
       <Helmet>
-        <title>{
-          props.documentTitle ?
-            props.documentTitle :
-            'Calculator App - ' + webSiteTitle
-        }</title>
+        <title>{props.documentTitle ? props.documentTitle : 'Calculator App - ' + webSiteTitle}</title>
         <meta
           name='description'
           content={
@@ -65,11 +65,13 @@ function Calculator(props) {
         />
         <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation() } />
       </Helmet>
-      <div className="App">
+
+
+      <div className="App text-center d-flex flex-column align-items-center">
         <h1 className="fs-2">Saaqi's React Calculator App.</h1>
-        <form>
+        <form style={styles} className="d-flex flex-column gap-2">
           <p
-            className='result py-1 my-4 rounded shadow-sm bg-warning text-bg-warning fw-medium fs-2'
+            className='result py-1  mt-4 rounded shadow-sm bg-warning text-bg-warning fw-medium fs-2'
             ref={resultRef}
           >
             {result}
@@ -82,12 +84,11 @@ function Calculator(props) {
             placeholder="Type a number"
           />
           <div className="btn-group mt-4 shadow-sm">
-            <button className="btn btn-outline-dark" onClick={plus}>Add +</button>
-            <button className="btn btn-outline-dark" onClick={minus}>Minus -</button>
-            <button className="btn btn-outline-dark" onClick={times}>Times *</button>
-            <button className="btn btn-outline-dark" onClick={divide}>Divide /</button>
+            <button className="btn btn-outline-primary fs-4 px-4" onClick={plus}>+</button>
+            <button className="btn btn-outline-primary fs-4 px-4" onClick={minus}>-</button>
+            <button className="btn btn-outline-primary fs-4 px-4" onClick={times}>X</button>
+            <button className="btn btn-outline-primary fs-4 px-4" onClick={divide}>/</button>
           </div>
-          <br />
           <div className="btn-group mt-4 shadow-sm">
             <button className="btn btn-danger border-dark" onClick={resetInput}>Reset Input</button>
             <button className="btn btn-danger border-dark" onClick={resetResult}>Reset Result</button>

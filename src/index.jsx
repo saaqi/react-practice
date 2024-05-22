@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route,  } from 'react-router-dom'
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 
 import Nav from './components/Nav.jsx'
-import Header from './components/Header.jsx'
+import Home from './components/Home.jsx'
 import CounterButton from './components/CounterButton.jsx'
 import { ThemeProvider } from './components/context/ThemeContext'
 import ThemeToggleButton from './components/ThemeToggleButton.jsx'
@@ -17,26 +17,23 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
-        <main className="min-vh-100 align-items-center d-flex justify-content-center">
+        <Nav />
+
+        <main className="align-items-center d-flex justify-content-center my-5">
           <div className="container my-4 text-center">
 
-            {/* Navigatoin */}
-            <Nav />
+            {/* Navigation */}
 
-            {/* Home */}
             <Routes>
+
+              {/* Home */}
               <Route path="/react-practice/" element={
-                <>
-                <Helmet>
-                  <title>Practice Project for React Basic Course.</title>
-                    <meta
-                      name='description'
-                      content='page for practicing react for Saqib Islam.'
-                    />
-                  <link rel="canonical" href="/react-practice/" />
-                </Helmet>
-                <Header heading="Practice Project for React Basic Course." />
-              </>
+                <Home
+                  heading="Practice Project for React Basic Course."
+                  // documentTitle="nyet"
+                  // documentDescription=""
+                  // documentURL="/counter-button"
+                />
               } />
 
               {/* Counter Button */}

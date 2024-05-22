@@ -41,11 +41,13 @@ const printLinks = (item) => {
 
 function Nav() {
   return (
-    <nav className="navigation d-flex justify-content-center">
-      <ul className='nav list-unstyled d-flex gap-3 w-auto justify-content-center align-items-center mb-3 py-3 px-4 bg-primary rounded shadow'>
-        {NavLink.map(printLinks)}
-      </ul>
-    </nav>
+    <div className="contianer my-5">
+      <nav className="navigation d-flex justify-content-center">
+        <ul className='nav list-unstyled d-flex gap-3 w-auto justify-content-center align-items-center mb-3 py-3 px-4 bg-primary rounded shadow'>
+          {NavLink.map(printLinks)}
+        </ul>
+      </nav>
+    </div>
   )
 }
 
