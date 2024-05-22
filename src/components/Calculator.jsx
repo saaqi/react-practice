@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import { Helmet } from 'react-helmet-async';
 import { WebSiteLocation, webSiteTitle } from './DefaultData'
 
+import './Calculator.css'
+
 
 
 function Calculator(props) {
@@ -21,12 +23,12 @@ function Calculator(props) {
 
   function times(e) {
     e.preventDefault();
-    setResult((result) => result * Number(inputRef.current.value));
+    setResult((result) => result ? result * Number(inputRef.current.value) : Number(inputRef.current.value));
   };
 
   function divide(e) {
     e.preventDefault();
-    setResult((result) => result ? result / Number(inputRef.current.value): 0);
+    setResult((result) => result ? result / Number(inputRef.current.value) : Number(inputRef.current.value));
   };
 
   function resetInput(e) {
@@ -47,10 +49,6 @@ function Calculator(props) {
     resetResult(e);
   };
 
-
-  const styles = {
-    maxWidth: '500px'
-  }
   return (
     <>
       <Helmet>
@@ -68,8 +66,8 @@ function Calculator(props) {
 
 
       <div className="App text-center d-flex flex-column align-items-center">
-        <h1 className="fs-2">Saaqi's React Calculator App.</h1>
-        <form style={styles} className="d-flex flex-column gap-2">
+        <h1 className="fs-2">Calculator:</h1>
+        <form className="d-flex flex-column gap-2">
           <p
             className='result py-1  mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2'
             ref={resultRef}
@@ -77,23 +75,44 @@ function Calculator(props) {
             {result}
           </p>
           <input
-            className="input-field w-100"
+            className="input-field fs-5 fw-medium form-control border-primary-subtle rounded-0"
             pattern="[0-9]"
             ref={inputRef}
             type="number"
             placeholder="Type a number"
           />
-          <div className="btn-group mt-4 shadow-sm">
-            <button className="btn btn-outline-primary fs-4 px-4" onClick={plus}>+</button>
-            <button className="btn btn-outline-primary fs-4 px-4" onClick={minus}>-</button>
-            <button className="btn btn-outline-primary fs-4 px-4" onClick={times}>X</button>
-            <button className="btn btn-outline-primary fs-4 px-4" onClick={divide}>/</button>
+
+          <div class="input__container">
+            <div className="digit__buttons">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(number => (
+                <button
+                  key={number}
+                  className="btn btn-outline-primary fs-4 px-4 rounded-0 border-primary-subtle"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    // alert(number)
+                    inputRef.current.value = inputRef.current.value + number
+                  }}
+                >
+                  {number}
+                </button>
+              ))}
+              <button className="btn btn-danger rounded-0 border-primary-subtle" onClick={resetInput}>CE</button>
+              <button className="btn btn-danger rounded-0 border-primary-subtle" onClick={resetAll}>AC</button>
+            </div>
+            <div className="calculate__buttons">
+              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={divide}>/</button>
+              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={times}>X</button>
+              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={minus}>-</button>
+              <button className="btn btn-warning rounded-0 fs-4 border-primary-subtle" onClick={plus}>+</button>
+            </div>
           </div>
-          <div className="btn-group mt-4 shadow-sm">
+
+          {/* <div className="btn-group mt-4 shadow-sm">
             <button className="btn btn-danger border-dark" onClick={resetInput}>Reset Input</button>
             <button className="btn btn-danger border-dark" onClick={resetResult}>Reset Result</button>
             <button className="btn btn-danger border-dark" onClick={resetAll}>Reset All</button>
-          </div>
+          </div> */}
         </form>
       </div>
     </>
