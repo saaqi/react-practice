@@ -3,19 +3,19 @@ import logo from '../images/logo.png'
 
 const NavLink = [
   {
-    link: '/react-practice/',
+    link: '/',
     text: 'Home'
   },
   {
-    link: '/react-practice/counter-button',
+    link: '/counter-button',
     text: 'Counter Button'
   },
   {
-    link: '/react-practice/theme-toggle-button',
+    link: '/theme-toggle-button',
     text: 'Theme Toggle'
   },
   {
-    link: '/react-practice/calculator',
+    link: '/calculator',
     text: 'Calculator'
   },
 ].map((item, index) => {
