@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route,  } from 'react-router-dom'
+import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 
 import Nav from './components/Nav.jsx'
@@ -16,7 +16,7 @@ import './styles/main.scss'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Nav />
 
         <main className="align-items-center d-flex justify-content-center my-5">
