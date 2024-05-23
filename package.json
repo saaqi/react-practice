@@ -1,10 +1,8 @@
 {
   "name": "saaqi-react-basics-course",
   "description": "My project to learn and follow along the React Basics course.",
-  "private": true,
   "version": "0.0.1",
-  "homepage": "https://saqibtech.com/react-practice",
-  "type": "module",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
