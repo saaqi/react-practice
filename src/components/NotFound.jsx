@@ -1,8 +1,14 @@
 export default function NotFound() {
   return (
     <div className="contianer">
-      <h1 class="h4 py-4 alert alert-danger">Error 404!.</h1>
-      <h2>This Page does not exists!</h2>
+      <div id="notfound">
+        <div className="notfound">
+          <h1 className="display-1 fw-medium mb-3">Oops!</h1>
+          <h2>404 - Page not found</h2>
+          <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+          <a className="btn btn-dark" href="/">Go To Homepage</a>
+        </div>
+      </div>
     </div>
   )
 }

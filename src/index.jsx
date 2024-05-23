@@ -5,9 +5,7 @@ import { HelmetProvider } from 'react-helmet-async'
 
 import Nav from './components/Nav.jsx'
 import Home from './components/Home.jsx'
-import CounterButton from './components/CounterButton.jsx'
 import { ThemeProvider } from './components/context/ThemeContext'
-import ThemeToggleButton from './components/ThemeToggleButton.jsx'
 import Calculator from './components/Calculator.jsx'
 import NotFound from './components/NotFound.jsx'
 
@@ -28,31 +26,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
               {/* Home */}
               <Route path="/" element={
+                <ThemeProvider>
                 <Home
                   heading="Practice Project for React Basic Course."
                   // documentTitle="nyet"
                   // documentDescription=""
                   // documentURL="/counter-button"
-                />
-              } />
-
-              {/* Counter Button */}
-              <Route path="/counter-button" element={
-                <CounterButton
-                  // documentTitle="nyet"
-                  // documentDescription=""
-                  // documentURL="/counter-button"
-                />
-              } />
-
-              {/* Theme Toggle Button */}
-              <Route path="/theme-toggle-button" element={
-                <ThemeProvider>
-                  <ThemeToggleButton
-                    text="Toggle Theme"
-                    // documentTitle=""
-                    // documentDescription=""
-                    // documentURL="/theme-toggle-button"
                   />
                 </ThemeProvider>
               } />

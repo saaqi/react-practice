@@ -7,14 +7,6 @@ const NavLink = [
     text: 'Home'
   },
   {
-    link: '/counter-button',
-    text: 'Counter Button'
-  },
-  {
-    link: '/theme-toggle-button',
-    text: 'Theme Toggle'
-  },
-  {
     link: '/calculator',
     text: 'Calculator'
   },
@@ -44,11 +36,11 @@ function Nav() {
   return (
     <div className="contianer">
       <nav className="navbar navbar-expand-lg bg-warning shadow-sm py-0">
-        <div className="container d-flex flex-column flex-md-row">
-          <Link className="navbar-brand text-bg-warning" to="/react-practice/">
+        <div className="container d-flex flex-column flex-sm-row">
+          <Link className="navbar-brand text-bg-warning" to="/">
             <img src={logo}  alt="logo" height='60' />
           </Link>
-          <ul className="navbar-nav gap-2 align-items-center justify-content-center flex-wrap flex-row mb-4 mb-md-0">
+          <ul className="navbar-nav gap-2 align-items-center justify-content-center flex-wrap flex-row mb-4 mb-sm-0">
             {NavLink.map(printLinks)}
           </ul>
         </div>
