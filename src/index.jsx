@@ -15,41 +15,35 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
-        <Nav />
-
-        <main className="align-items-center d-flex justify-content-center my-5">
-          <div className="container my-4 text-center">
-
-            {/* Navigation */}
-
-            <Routes>
-
-              {/* Home */}
-              <Route path="/" element={
-                <ThemeProvider>
-                <Home
-                  heading="Practice Project for React Basic Course."
-                  // documentTitle="nyet"
-                  // documentDescription=""
-                  // documentURL="/counter-button"
-                  />
-                </ThemeProvider>
-              } />
-
-              {/* Calculator */}
-              <Route path="/calculator" element={
+        <ThemeProvider>
+          {/* Navigation */}
+          <Nav />
+          <main className="align-items-center d-flex justify-content-center my-5">
+            <div className="container my-4 text-center">
+              <Routes>
+                {/* Home */}
+                <Route path="/" element={
+                  <Home
+                    heading="Practice Project for React."
+                    // documentTitle="nyet"
+                    // documentDescription=""
+                    // documentURL="/counter-button"
+                    />
+                } />
+                {/* Calculator */}
+                <Route path="/calculator" element={
                   <Calculator
                     // documentTitle=""
                     // documentDescription=""
                     // documentURL="/theme-toggle-button"
                   />
-              } />
-
-              {/* 404 Page */}
-              <Route path='*' element={<NotFound />}/>
-            </Routes>
-          </div>
-        </main>
+                } />
+                {/* 404 Page */}
+                <Route path='*' element={<NotFound />}/>
+              </Routes>
+            </div>
+          </main>
+        </ThemeProvider>
       </BrowserRouter>
     </HelmetProvider>
   </React.StrictMode>

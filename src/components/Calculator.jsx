@@ -1,6 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useContext, useRef } from 'react'
 import { Helmet } from 'react-helmet-async';
 import { WebSiteLocation, webSiteTitle } from './DefaultData'
+import { ThemeContext } from './context/ThemeContext'
 
 import './Calculator.css'
 
@@ -10,6 +11,11 @@ function Calculator(props) {
   const inputRef = useRef(null);
   const resultRef = useRef(null);
   const [result, setResult] = useState(0);
+
+  // Consume the theme context using useContext hook
+  const { theme } = useContext(ThemeContext);
+  // Style the button based on the current theme
+  const buttonStyle = theme === 'light' ? 'btn-dark' : 'btn-light'
 
   function plus(e) {
     e.preventDefault();
@@ -68,7 +74,7 @@ function Calculator(props) {
         <h1 className="fs-2">Calculator:</h1>
         <form className="d-flex flex-column gap-2">
           <p
-            className='result py-1  mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2'
+            className='result py-1 mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2'
             ref={resultRef}
           >
             {result}
@@ -86,7 +92,7 @@ function Calculator(props) {
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(number => (
                 <button
                   key={number}
-                  className="btn btn-outline-primary fs-4 px-4 border-primary-subtle"
+                  className={'btn fs-4 px-4 border-primary-subtle ' + buttonStyle}
                   onClick={(e) => {
                     e.preventDefault()
                     // alert(number)
