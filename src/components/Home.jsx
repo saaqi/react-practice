@@ -12,7 +12,7 @@ function Home(props) {
   // Consume the theme context using useContext hook
   const { theme } = useContext(ThemeContext);
   // Style the button based on the current theme
-  const buttonStyle = theme === 'light' ? 'btn-dark' : 'btn-light'
+  const buttonStyle = theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'
 
   return (
     <>

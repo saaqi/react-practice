@@ -14,7 +14,8 @@ function Calculator(props) {
   // Consume the theme context using useContext hook
   const { theme } = useContext(ThemeContext);
   // Style the button based on the current theme
-  const buttonStyle = theme === 'light' ? 'btn-dark' : 'btn-light'
+  const buttonStyle = theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'
+  const calculateButtonStyle = theme === 'light' ? 'btn-warning border-dark' : 'btn-success'
 
   function plus(e) {
     e.preventDefault();
@@ -88,7 +89,7 @@ function Calculator(props) {
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(number => (
                 <button
                   key={number}
-                  className={'btn fs-4 px-4 border-primary-subtle ' + buttonStyle}
+                  className={'btn fs-4 px-4 ' + buttonStyle}
                   onClick={(e) => {
                     e.preventDefault()
                     inputRef.current.value = inputRef.current.value + number
@@ -101,10 +102,10 @@ function Calculator(props) {
               <button className="btn btn-danger" onClick={resetAll}>AC</button>
             </div>
             <div className="calculate__buttons">
-              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={divide}>/</button>
-              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={times}>X</button>
-              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={minus}>-</button>
-              <button className="btn btn-warning fs-4 border-primary-subtle" onClick={plus}>+</button>
+              <button className={"btn fs-4 " + calculateButtonStyle} onClick={divide}>/</button>
+              <button className={"btn fs-4 " + calculateButtonStyle} onClick={times}>X</button>
+              <button className={"btn fs-4 " + calculateButtonStyle} onClick={minus}>-</button>
+              <button className={"btn fs-4 " + calculateButtonStyle} onClick={plus}>+</button>
             </div>
           </div>
         </form>
