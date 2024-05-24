@@ -22,22 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <div className="container my-4 text-center">
               <Routes>
                 {/* Home */}
-                <Route path="/" element={
-                  <Home
-                    heading="Practice Project for React."
-                    // documentTitle="nyet"
-                    // documentDescription=""
-                    // documentURL="/counter-button"
-                    />
-                } />
+                <Route path="/" element={<Home heading="Practice Project for React." />} />
                 {/* Calculator */}
-                <Route path="/calculator" element={
-                  <Calculator
-                    // documentTitle=""
-                    // documentDescription=""
-                    // documentURL="/theme-toggle-button"
-                  />
-                } />
+                <Route path="/calculator" element={<Calculator />} />
                 {/* 404 Page */}
                 <Route path='*' element={<NotFound />}/>
               </Routes>

@@ -17,31 +17,21 @@ function Home(props) {
   return (
     <>
       <Helmet>
-        <title>
-          {
-            props.documentTitle ?
-            props.documentTitle :
-            'Practice Project for React.'
-          }
-        </title>
+        <title>{props.documentTitle ? props.documentTitle : 'Practice Project for React.'}</title>
         <meta
           name='description'
           content={
-            props.documentDescription ?
-            props.documentDescription :
-            'Practice page for react for Saqib Islam.'
+            props.documentDescription ? props.documentDescription : 'Practice page for react for Saqib Islam.'
           }
-          />
-        <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation() } />
+        />
+        <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation()} />
       </Helmet>
 
       <h1>{props.heading ? props.heading : 'Practice Project for React.'}</h1>
-
       <h2 className="mt-5">Press Counter Buttons</h2>
       <button className={'btn btn-lg ' + buttonStyle} onClick={() => setCount(count + 1)}>
-        count is {count}
+        Pressed {count}
       </button>
-
     </>
   )
 }

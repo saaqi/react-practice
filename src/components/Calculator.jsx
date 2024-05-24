@@ -6,7 +6,6 @@ import { ThemeContext } from './context/ThemeContext'
 import './Calculator.css'
 
 
-
 function Calculator(props) {
   const inputRef = useRef(null);
   const resultRef = useRef(null);
@@ -63,20 +62,18 @@ function Calculator(props) {
           name='description'
           content={
             props.documentDescription ?
-              props.documentDescription :
-              'This page is written by Saqqi for Calculator app.'
+            props.documentDescription :
+            'This page is written by Saqqi for Calculator app.'
           }
         />
-        <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation() } />
+        <link rel="canonical" href={props.documentURL ? props.documentURL : WebSiteLocation()} />
       </Helmet>
+
 
       <div className="App text-center d-flex flex-column align-items-center">
         <h1 className="fs-2">Calculator:</h1>
         <form className="d-flex flex-column gap-2">
-          <p
-            className='result py-1 mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2'
-            ref={resultRef}
-          >
+          <p className='result py-1 mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2' ref={resultRef}>
             {result}
           </p>
           <input
@@ -86,7 +83,6 @@ function Calculator(props) {
             type="number"
             placeholder="Type a number"
           />
-
           <div className="input__container">
             <div className="digit__buttons">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map(number => (
@@ -95,7 +91,6 @@ function Calculator(props) {
                   className={'btn fs-4 px-4 border-primary-subtle ' + buttonStyle}
                   onClick={(e) => {
                     e.preventDefault()
-                    // alert(number)
                     inputRef.current.value = inputRef.current.value + number
                   }}
                 >
@@ -112,12 +107,6 @@ function Calculator(props) {
               <button className="btn btn-warning fs-4 border-primary-subtle" onClick={plus}>+</button>
             </div>
           </div>
-
-          {/* <div className="btn-group mt-4 shadow-sm">
-            <button className="btn btn-danger border-dark" onClick={resetInput}>Reset Input</button>
-            <button className="btn btn-danger border-dark" onClick={resetResult}>Reset Result</button>
-            <button className="btn btn-danger border-dark" onClick={resetAll}>Reset All</button>
-          </div> */}
         </form>
       </div>
     </>
