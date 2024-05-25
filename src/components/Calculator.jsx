@@ -18,58 +18,86 @@ const Calculator = props => {
   const buttonStyle = theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'
   const calculateButtonStyle = theme === 'light' ? 'btn-warning border-dark' : 'btn-success'
 
+  /**
+   * Function to add the input value to the memory
+   * @param {Event} e - event object
+   */
   const plus = e => {
-    e.preventDefault();
-    const inputValue = Number(inputRef.current.value);
-    const newMemory = result === 0 ? inputValue : result + inputValue;
-    setResult(newMemory);
-    setMemory(newMemory);
-    inputRef.current.value = null; // Clear input field
+    e.preventDefault()
+    const inputValue = Number(inputRef.current.value)
+    const newMemory = result === 0 ? inputValue : result + inputValue
+    setResult(newMemory)
+    setMemory(newMemory)
+    inputRef.current.value = null // Clear input field
   }
 
+  /**
+   * Function to subtract the input value from the memory
+   * @param {Event} e - event object
+   */
   const minus = e => {
-    e.preventDefault();
-    const inputValue = Number(inputRef.current.value);
-    const newMemory = result === 0 ? inputValue : result - inputValue;
-    setResult(newMemory);
-    setMemory(newMemory);
-    inputRef.current.value = null; // Clear input field
+    e.preventDefault()
+    const inputValue = Number(inputRef.current.value)
+    const newMemory = result === 0 ? inputValue : result - inputValue
+    setResult(newMemory)
+    setMemory(newMemory)
+    inputRef.current.value = null // Clear input field
   }
 
+  /**
+   * Function to multiply the input value with the memory
+   * @param {Event} e - event object
+   */
   const times = e => {
-    e.preventDefault();
-    const inputValue = Number(inputRef.current.value);
-    const newMemory = result === 0 ? inputValue : result * inputValue;
-    setResult(newMemory);
-    setMemory(newMemory);
-    inputRef.current.value = null; // Clear input field
+    e.preventDefault()
+    const inputValue = Number(inputRef.current.value)
+    const newMemory = result === 0 ? inputValue : result * inputValue
+    setResult(newMemory)
+    setMemory(newMemory)
+    inputRef.current.value = null // Clear input field
   }
 
+  /**
+   * Function to divide the memory by the input value
+   * @param {Event} e - event object
+   */
   const divide = e => {
-    e.preventDefault();
-    const inputValue = Number(inputRef.current.value);
-    const newMemory = result === 0 ? inputValue : result / inputValue;
-    setResult(newMemory);
-    setMemory(newMemory);
-    inputRef.current.value = null; // Clear input field
+    e.preventDefault()
+    const inputValue = Number(inputRef.current.value)
+    const newMemory = result === 0 ? inputValue : result / inputValue
+    setResult(newMemory)
+    setMemory(newMemory)
+    inputRef.current.value = null // Clear input field
   }
 
+  /**
+   * Function to clear the input field
+   * @param {Event} e - event object
+   */
   const resetInput = e => {
     e.preventDefault();
-    inputRef.current.value = null;
+    inputRef.current.value = null
     // inputRef.current.focus();
   }
 
+  /**
+   * Function to reset the result to 0
+   * @param {Event} e - event object
+   */
   const resetResult = e => {
-    e.preventDefault();
-    setResult(0);
+    e.preventDefault()
+    setResult(0)
     // inputRef.current.focus();
   }
 
+  /**
+   * Function to reset both the result and the input field
+   * @param {Event} e - event object
+   */
   const resetAll = e => {
-    e.preventDefault();
-    resetInput(e);
-    resetResult(e);
+    e.preventDefault()
+    resetInput(e)
+    resetResult(e)
   };
 
   return (
@@ -118,11 +146,16 @@ const Calculator = props => {
               <button className="btn btn-danger" onClick={resetInput}>CE</button>
               <button className="btn btn-danger" onClick={resetAll}>AC</button>
             </div>
+
             <div className="calculate__buttons">
-              <button className={"btn fs-4 " + calculateButtonStyle} onClick={divide}>/</button>
-              <button className={"btn fs-4 " + calculateButtonStyle} onClick={times}>X</button>
-              <button className={"btn fs-4 " + calculateButtonStyle} onClick={minus}>-</button>
-              <button className={"btn fs-4 " + calculateButtonStyle} onClick={plus}>+</button>
+              {[
+                { funct: divide, symbol: '/' },
+                { funct: times, symbol: '*' },
+                { funct: minus, symbol: '-' },
+                { funct: plus, symbol: '+' }
+              ].map(f => (
+                <button key={f.symbol} className={"btn fs-4 " + calculateButtonStyle} onClick={f.funct}>{f.symbol}</button>
+              ))}
             </div>
           </div>
         </form>
