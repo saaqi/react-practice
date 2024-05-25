@@ -119,7 +119,11 @@ const Calculator = props => {
       <div className="App text-center d-flex flex-column align-items-center">
         <h1 className="fs-2">Calculator:</h1>
         <form className="d-flex flex-column gap-2">
-          <p className='result py-1 mt-4 rounded shadow-sm bg-info text-bg-info fw-medium fs-2' ref={resultRef}>
+          <p
+            className='result py-1 mt-4 rounded bg-info text-bg-info fw-medium fs-2'
+            style={{ boxShadow: 'inset 2px 2px 4px rgba(0,0,0,0.3' }}
+            ref={resultRef}
+          >
             {result}
           </p>
           <input
@@ -149,8 +153,8 @@ const Calculator = props => {
 
             <div className="calculate__buttons">
               {[
-                { funct: divide, symbol: '/' },
-                { funct: times, symbol: '*' },
+                { funct: divide, symbol: '⁒' },
+                { funct: times, symbol: '×' },
                 { funct: minus, symbol: '-' },
                 { funct: plus, symbol: '+' }
               ].map(f => (
