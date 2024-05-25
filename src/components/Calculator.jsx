@@ -6,50 +6,67 @@ import { ThemeContext } from './context/ThemeContext'
 import './Calculator.css'
 
 
-function Calculator(props) {
-  const inputRef = useRef(null);
-  const resultRef = useRef(null);
-  const [result, setResult] = useState(0);
+const Calculator = props => {
+  const inputRef = useRef(null)
+  const resultRef = useRef(null)
+  const [result, setResult] = useState(0)
+  const [memory, setMemory] = useState(0)
 
   // Consume the theme context using useContext hook
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext)
   // Style the button based on the current theme
   const buttonStyle = theme === 'light' ? 'btn-outline-dark' : 'btn-outline-light'
   const calculateButtonStyle = theme === 'light' ? 'btn-warning border-dark' : 'btn-success'
 
-  function plus(e) {
+  const plus = e => {
     e.preventDefault();
-    setResult((result) => result + Number(inputRef.current.value))
-  };
+    const inputValue = Number(inputRef.current.value);
+    const newMemory = result === 0 ? inputValue : result + inputValue;
+    setResult(newMemory);
+    setMemory(newMemory);
+    inputRef.current.value = null; // Clear input field
+  }
 
-  function minus(e) {
+  const minus = e => {
     e.preventDefault();
-    setResult((result) => result - Number(inputRef.current.value))
-  };
+    const inputValue = Number(inputRef.current.value);
+    const newMemory = result === 0 ? inputValue : result - inputValue;
+    setResult(newMemory);
+    setMemory(newMemory);
+    inputRef.current.value = null; // Clear input field
+  }
 
-  function times(e) {
+  const times = e => {
     e.preventDefault();
-    setResult((result) => result ? result * Number(inputRef.current.value) : Number(inputRef.current.value))
-  };
+    const inputValue = Number(inputRef.current.value);
+    const newMemory = result === 0 ? inputValue : result * inputValue;
+    setResult(newMemory);
+    setMemory(newMemory);
+    inputRef.current.value = null; // Clear input field
+  }
 
-  function divide(e) {
+  const divide = e => {
     e.preventDefault();
-    setResult((result) => result ? result / Number(inputRef.current.value) : Number(inputRef.current.value))
-  };
+    const inputValue = Number(inputRef.current.value);
+    const newMemory = result === 0 ? inputValue : result / inputValue;
+    setResult(newMemory);
+    setMemory(newMemory);
+    inputRef.current.value = null; // Clear input field
+  }
 
-  function resetInput(e) {
+  const resetInput = e => {
     e.preventDefault();
     inputRef.current.value = null;
     // inputRef.current.focus();
-  };
+  }
 
-  function resetResult(e) {
+  const resetResult = e => {
     e.preventDefault();
     setResult(0);
     // inputRef.current.focus();
-  };
+  }
 
-  function resetAll(e) {
+  const resetAll = e => {
     e.preventDefault();
     resetInput(e);
     resetResult(e);
