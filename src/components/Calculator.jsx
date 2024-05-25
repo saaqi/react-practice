@@ -65,7 +65,7 @@ const Calculator = props => {
     e.preventDefault()
     const inputValue = Number(inputRef.current.value)
     const newMemory = result === 0 ? inputValue : result / inputValue
-    setResult(newMemory)
+    inputValue === 0 ? setResult(0) : setResult(newMemory)
     setMemory(newMemory)
     inputRef.current.value = null // Clear input field
   }
@@ -127,7 +127,7 @@ const Calculator = props => {
             pattern="[0-9]"
             ref={inputRef}
             type="number"
-            placeholder="Type a number"
+            placeholder="Enter a number"
           />
           <div className="input__container">
             <div className="digit__buttons">
