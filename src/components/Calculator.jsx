@@ -38,7 +38,7 @@ const Calculator = props => {
   const minus = e => {
     e.preventDefault()
     const inputValue = Number(inputRef.current.value)
-    const newMemory = result === 0 ? inputValue : result - inputValue
+    const newMemory = result === 0 ? -inputValue : result - inputValue
     setResult(newMemory)
     setMemory(newMemory)
     inputRef.current.value = null // Clear input field
